@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import * as Yup from "yup";
 import { Formik } from "formik";
 import { Alert, Button, Form } from "react-bootstrap";
+import Input from './Input';
 
 import useAuth from "../../hooks/useAuth";
 
@@ -14,8 +15,8 @@ function SignIn() {
   return (
     <Formik
       initialValues={{
-        email: "demo@bootlab.io",
-        password: "unsafepassword",
+        email: "email@email.com",
+        password: "unsafe",
         submit: false,
       }}
       validationSchema={Yup.object().shape({
@@ -49,12 +50,7 @@ function SignIn() {
         values,
       }) => (
         <Form onSubmit={handleSubmit}>
-          <Alert className="my-3" variant="primary">
-            <div className="alert-message">
-              Use <strong>demo@bootlab.io</strong> and{" "}
-              <strong>unsafepassword</strong> to sign in
-            </div>
-          </Alert>
+
           {errors.submit && (
             <Alert className="my-3" variant="danger">
               <div className="alert-message">{errors.submit}</div>

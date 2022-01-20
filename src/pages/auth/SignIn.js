@@ -3,13 +3,13 @@ import { Helmet } from "react-helmet-async";
 import { Card } from "react-bootstrap";
 
 import SignIn from "../../components/auth/SignIn";
-import avatar from "../../assets/img/avatars/avatar.jpg";
+import avatar from "../../assets/img/brands/react.svg";
 
 const SignInPage = () => (
   <React.Fragment>
     <Helmet title="Sign In" />
     <div className="text-center mt-4">
-      <h2>Welcome back, Chris</h2>
+      <h2>Welcome </h2>
       <p className="lead">Sign in to your account to continue</p>
     </div>
 
