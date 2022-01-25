@@ -86,7 +86,7 @@ const Statistics = () => (
             <Col xs="6">
               <div className="illustration-text p-3 m-1">
                 <h4 className="illustration-text">Welcome Back, Chris!</h4>
-                <p className="mb-0">AppStack Dashboard</p>
+                <p className="mb-0">Movie Dashboard</p>
               </div>
             </Col>
             <Col xs="6" className="align-self-end text-end">

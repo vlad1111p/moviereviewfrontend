@@ -20,7 +20,7 @@ const Statistics = () => {
                     <h4 className="illustration-text">
                       {t("Welcome back")}, Chris!
                     </h4>
-                    <p className="mb-0">AppStack Dashboard</p>
+                    <p className="mb-0">Movie Dashboard</p>
                   </div>
                 </Col>
                 <Col xs="6" className="align-self-end text-end">

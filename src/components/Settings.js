@@ -132,11 +132,11 @@ const Settings = () => {
         <div className="settings-content">
           <div className="settings-title d-flex align-items-center">
             <button
-              type="button"
-              className="btn-close float-right js-settings-toggle"
-              aria-label="Close"
-              onClick={() => setIsOpen(false)}
-            ></button>
+    type="button"
+    className="btn-close float-right js-settings-toggle"
+    aria-label="Close"
+    onClick={() => setIsOpen(false)}
+    />
             <h4 className="mb-0 ms-2 d-inline-block">Theme Builder</h4>
           </div>
           <div className="settings-body">

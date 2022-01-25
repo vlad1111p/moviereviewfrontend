@@ -2,7 +2,6 @@
   "name": "appstack-react",
   "version": "2.1.0",
   "description": "AppStack - React Admin & Dashboard Template",
-  "author": "Paul Laros <support@bootlab.io>",
   "private": true,
   "scripts": {
     "sass:build": "sass src/assets/scss:public/css --load-path node_modules",

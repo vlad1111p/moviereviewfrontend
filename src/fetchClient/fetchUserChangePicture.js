@@ -1,14 +1,14 @@
-import axios from "axios";
 import React, {Component, useCallback, useEffect, useState} from "react";
-import {useDropzone} from 'react-dropzone';
+import axios from "axios";
+import AuthenticationService from "../components/auth/service/AuthenticationService";
+import {useDropzone} from "react-dropzone";
 import {getAllUsers} from "./client";
 
-const UserProfiles = () => {
-
+const UserProfileChangePicture = () => {
+    const currentWholeUser = AuthenticationService.getCurrentWholeUser();
     const [UserProfiles, setUserProfiles] = useState([]);
     const fetchUserProfiles = () => {
         axios.get("http://localhost:8080/api/v1/user-profile").then(res => {
-            console.log(res)
             setUserProfiles(res.data);
         });
 
@@ -19,21 +19,17 @@ const UserProfiles = () => {
         fetchUserProfiles();
     }, []);
     return UserProfiles.map((userProfile, index) => {
-        return (
+        if (userProfile.id === currentWholeUser.id)
+            return (<div><img src={`http://localhost:8080/api/v1/user-profile/${userProfile.userProfileId}/image/download`}
+                      alt="The video was removed from the source" className="img-fluid rounded-circle mb-2"
+                      width="120" height="120"/>
+                       <MyDropzone {...userProfile}/>
+               </div>
+               )
+            }
 
-            <div key={index}>
-                {userProfile.userProfileId ?
-                    (<img src={`http://localhost:8080/api/v1/user-profile/${userProfile.userProfileId}/image/download`} alt="The picture has been deleted"/> )
-                    : null}
-                <br/>
-                <h1>{userProfile.userProfileId}</h1>
-                <p>{userProfile.userProfileId}</p>
-                <MyDropzone {...userProfile}/>
-                <br/>
 
-            </div>
-        )
-    })
+    )
 };
 
 function MyDropzone({userProfileId}) {
@@ -69,39 +65,11 @@ function MyDropzone({userProfileId}) {
     )
 }
 
-class UsersAll extends Component{
-
-    state ={
-        users:[]
+export const fetchUserChangePicture =()=>{
+    return (
+            <div className="App">
+                <UserProfileChangePicture/>
+            </div>
+        );
     }
-    componentDidMount ()  {
-        this.fetchUsers();
-    }
-    fetchUsers = () => getAllUsers()
-        .then(res=> res.json()
-            .then(users => {
-        console.log(users);
-        this.setState({users});
-    }));
-    render(){
-        const {users}=this.state;
-        function alltheusers() {
-            return users.map((user,id)=>{
-                    return(
-                        <div key={id}>
-                            <h2>{user.id}</h2>
-                            <h2>{user.firstName}</h2>
-                        </div>)
-                }
-            )
-        }
 
-        return (
-        <div className="App">
-            <UserProfiles/>
-            {alltheusers()}
-        </div>
-    );
-}}
-
-export default UsersAll;

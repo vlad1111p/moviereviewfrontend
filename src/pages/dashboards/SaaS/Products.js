@@ -53,7 +53,7 @@ const Products = () => (
           <td className="d-none d-xl-table-cell">610</td>
         </tr>
         <tr>
-          <td>AppStack Theme</td>
+          <td>Movie Theme</td>
           <td>
             <Badge bg="success">HTML</Badge>
           </td>

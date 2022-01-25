@@ -3,12 +3,13 @@ import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import { Formik } from "formik";
 import { Alert, Button, Form } from "react-bootstrap";
-
+import Authentication from "../auth/service/AuthenticationService";
 import useAuth from "../../hooks/useAuth";
 
 function SignUp() {
   const navigate = useNavigate();
   const { signUp } = useAuth();
+
 
   return (
     <Formik
@@ -28,18 +29,22 @@ function SignUp() {
           .max(255)
           .required("Email is required"),
         password: Yup.string()
-          .min(12, "Must be at least 12 characters")
+          .min(4, "Must be at least 4 characters")
           .max(255)
           .required("Required"),
       })}
       onSubmit={async (values, { setErrors, setStatus, setSubmitting }) => {
-        try {
-          signUp(
-            values.email,
-            values.password,
-            values.firstName,
-            values.lastName
-          );
+        try {       console.log(values.firstName  + " "+ values.email + " "+values.password);
+            await Authentication.register(
+                values.firstName,
+                values.lastName,
+                values.email,
+                values.password,
+            ).then((response) => {
+                console.log(response);
+            }, (error) => {
+                console.log(error);
+            });
           navigate("/auth/sign-in");
         } catch (error) {
           const message = error.message || "Something went wrong";

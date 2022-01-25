@@ -23,8 +23,8 @@ const App = () => {
   return (
     <HelmetProvider>
       <Helmet
-        titleTemplate="%s | AppStack - React Admin & Dashboard Template"
-        defaultTitle="AppStack - React Admin & Dashboard Template"
+        titleTemplate="%s | Admin & Dashboard "
+        defaultTitle=" Dashboard Template"
       />
       <Provider store={store}>
         <ThemeProvider>

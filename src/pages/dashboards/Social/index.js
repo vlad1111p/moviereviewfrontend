@@ -8,6 +8,7 @@ const Social = () => (
     <Helmet title="Social Dashboard" />
     <Container className="container-lg" >
       <Row>
+
           <MoviesAll/>
       </Row>
     </Container>

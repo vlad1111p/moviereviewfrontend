@@ -1,34 +1,29 @@
-import {getAllMovies} from "./client";
-import * as React from 'react';
 import {Component} from "react";
+import AuthenticationService from "../components/auth/service/AuthenticationService";
 import {Card, Col, Row} from "react-bootstrap";
-import unsplash1 from "../assets/img/photos/unsplash-1.jpg";
+import * as React from "react";
 
-
-class MoviesAll extends Component{
+class MoviesById extends Component {
 
     state ={
-        movies:[]
+        movies:[],
+        id:1
     }
     componentDidMount ()  {
-        this.fetchMovies();
     }
-    fetchMovies = () => getAllMovies()
-        .then(res=> res.json()
-            .then(movies => {
-        console.log(movies);
-        this.setState({movies: movies});
-    }));
+
     render(){
-        const {movies}=this.state;
+        let {movies}=this.state;
+        movies=AuthenticationService.getCurrentQueriedMoviesById(this.state.id);
         function allthemovies() {
+
             return movies.map((movie, id)=>{
                     return(
 
-                            <Col md="6" lg="4" key={id}>
+                        <Col md="6" lg="4" key={id}>
                             <Card>
                                 <Card.Img width="10%" height="30%" src={movie.movieProfileImageLink} alt="couldn't find image" />
-                                    <Card.Header>
+                                <Card.Header>
                                     <Card.Title tag="h5" className="mb-0">
                                         {movie.name}
                                     </Card.Title>
@@ -40,20 +35,21 @@ class MoviesAll extends Component{
                                     <Card.Link href={movie.description}>movie link</Card.Link>
                                 </Card.Body>
                             </Card>
-                            </Col>
-                        )
+                        </Col>
+                    )
                 }
             )
         }
-
         return (
 
-        <Row>
-    {allthemovies()}
-        </Row>
+            <Row>
+                {allthemovies()}
+            </Row>
 
 
-    );
-}}
+        );
+    }
 
-export default MoviesAll;
+
+}
+export default MoviesById;

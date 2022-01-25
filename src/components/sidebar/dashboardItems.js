@@ -19,7 +19,7 @@ const pagesSection = [
     href: "/dashboard",
     icon: Sliders,
     title: "Dashboards",
-    badge: "5",
+    badge: "4",
     children: [
       {
         href: "/dashboard/default",
@@ -27,26 +27,26 @@ const pagesSection = [
       },
       {
         href: "/dashboard/analytics",
-        title: "Analytics",
+        title: "Current Query",
       },
       {
         href: "/dashboard/saas",
-        title: "SaaS",
+        title: "Current Movie edit",
       },
       {
         href: "/dashboard/social",
-        title: "Social",
+        title: "All Movies",
       },
       {
         href: "/dashboard/crypto",
-        title: "Crypto",
+        title: "All Users",
       },
     ],
   },
   {
     href: "/pages",
     icon: Layout,
-    title: "Pages",
+    title: "Profile",
     children: [
       {
         href: "/pages/profile",
@@ -55,36 +55,7 @@ const pagesSection = [
       {
         href: "/pages/settings",
         title: "Settings",
-      },
-      {
-        href: "/pages/clients",
-        title: "Clients",
-      },
-      {
-        href: "/pages/projects",
-        title: "Projects",
-      },
-      {
-        href: "/pages/invoice",
-        title: "Invoice",
-      },
-      {
-        href: "/pages/pricing",
-        title: "Pricing",
-      },
-      {
-        href: "/pages/tasks",
-        title: "Tasks",
-      },
-      {
-        href: "/pages/chat",
-        title: "Chat",
-        badge: "New",
-      },
-      {
-        href: "/pages/blank",
-        title: "Blank Page",
-      },
+      }
     ],
   },
   {
@@ -101,10 +72,6 @@ const pagesSection = [
         title: "Sign Up",
       },
       {
-        href: "/auth/reset-password",
-        title: "Reset Password",
-      },
-      {
         href: "/auth/404",
         title: "404 Page",
       },
@@ -114,109 +81,104 @@ const pagesSection = [
       },
     ],
   },
-  {
-    href: "/docs/introduction",
-    icon: BookOpen,
-    title: "Documentation",
-  },
 ];
 
 const componentsSection = [
-  {
-    href: "/ui",
-    icon: Grid,
-    title: "UI Elements",
-    children: [
-      {
-        href: "/ui/alerts",
-        title: "Alerts",
-      },
-      {
-        href: "/ui/buttons",
-        title: "Buttons",
-      },
-      {
-        href: "/ui/cards",
-        title: "Cards",
-      },
-      {
-        href: "/ui/carousel",
-        title: "Carousel",
-      },
-      {
-        href: "/ui/embed-video",
-        title: "Embed Video",
-      },
-      {
-        href: "/ui/general",
-        title: "General",
-      },
-      {
-        href: "/ui/grid",
-        title: "Grid",
-      },
-      {
-        href: "/ui/modals",
-        title: "Modals",
-      },
-      {
-        href: "/ui/offcanvas",
-        title: "Offcanvas",
-      },
-      {
-        href: "/ui/tabs",
-        title: "Tabs",
-      },
-      {
-        href: "/ui/typography",
-        title: "Typography",
-      },
-    ],
-  },
-  {
-    href: "/icons",
-    icon: Heart,
-    title: "Icons",
-    badge: "1500+",
-    children: [
-      {
-        href: "/icons/feather",
-        title: "Feather",
-      },
-      {
-        href: "/icons/font-awesome",
-        title: "Font Awesome",
-      },
-    ],
-  },
-  {
-    href: "/forms",
-    icon: CheckSquare,
-    title: "Forms",
-    children: [
-      {
-        href: "/forms/layouts",
-        title: "Layouts",
-      },
-      {
-        href: "/forms/basic-inputs",
-        title: "Basic Inputs",
-      },
-      {
-        href: "/forms/input-groups",
-        title: "Input Groups",
-      },
-      {
-        href: "/forms/floating-labels",
-        title: "Floating Labels",
-      },
-    ],
-  },
-  {
-    href: "/tables",
-    icon: List,
-    title: "Tables",
-  },
+  // {
+  //   href: "/ui",
+  //   icon: Grid,
+  //   title: "UI Elements",
+  //   children: [
+  //     {
+  //       href: "/ui/alerts",
+  //       title: "Alerts",
+  //     },
+  //     {
+  //       href: "/ui/buttons",
+  //       title: "Buttons",
+  //     },
+  //     {
+  //       href: "/ui/cards",
+  //       title: "Cards",
+  //     },
+  //     {
+  //       href: "/ui/carousel",
+  //       title: "Carousel",
+  //     },
+  //     {
+  //       href: "/ui/embed-video",
+  //       title: "Embed Video",
+  //     },
+  //     {
+  //       href: "/ui/general",
+  //       title: "General",
+  //     },
+  //     {
+  //       href: "/ui/grid",
+  //       title: "Grid",
+  //     },
+  //     {
+  //       href: "/ui/modals",
+  //       title: "Modals",
+  //     },
+  //     {
+  //       href: "/ui/offcanvas",
+  //       title: "Offcanvas",
+  //     },
+  //     {
+  //       href: "/ui/tabs",
+  //       title: "Tabs",
+  //     },
+  //     {
+  //       href: "/ui/typography",
+  //       title: "Typography",
+  //     },
+  //   ],
+  // },
+  // {
+  //   href: "/icons",
+  //   icon: Heart,
+  //   title: "Icons",
+  //   badge: "1500+",
+  //   children: [
+  //     {
+  //       href: "/icons/feather",
+  //       title: "Feather",
+  //     },
+  //     {
+  //       href: "/icons/font-awesome",
+  //       title: "Font Awesome",
+  //     },
+  //   ],
+  // },
+  // {
+  //   href: "/forms",
+  //   icon: CheckSquare,
+  //   title: "Forms",
+  //   children: [
+  //     {
+  //       href: "/forms/layouts",
+  //       title: "Layouts",
+  //     },
+  //     {
+  //       href: "/forms/basic-inputs",
+  //       title: "Basic Inputs",
+  //     },
+  //     {
+  //       href: "/forms/input-groups",
+  //       title: "Input Groups",
+  //     },
+  //     {
+  //       href: "/forms/floating-labels",
+  //       title: "Floating Labels",
+  //     },
+  //   ],
+  // },
+  // {
+  //   href: "/tables",
+  //   icon: List,
+  //   title: "Tables",
+  // },
 ];
 
 const pluginsSection = [
@@ -361,14 +323,14 @@ const navItems = [
     title: "Pages",
     pages: pagesSection,
   },
-  {
-    title: "Tools & Components",
-    pages: componentsSection,
-  },
-  {
-    title: "Plugins & Addons",
-    pages: pluginsSection,
-  },
+  // {
+  //   title: "Tools & Components",
+  //   pages: componentsSection,
+  // },
+  // {
+  //   title: "Plugins & Addons",
+  //   pages: pluginsSection,
+  // },
 ];
 
 export default navItems;
