@@ -117,16 +117,9 @@ const Settings = () => {
           title="Theme Builder"
           onClick={() => setIsOpen(true)}
         >
-          <Sliders className="feather align-middle" /> Builder
+          <Sliders className="feather align-middle" /> Display
         </div>
-        <a
-          className="settings-toggle-option"
-          title="Documentation"
-          href="/docs"
-          target="_blank"
-        >
-          <BookOpen className="feather align-middle" />
-        </a>
+
       </div>
       <div className="settings-panel">
         <div className="settings-content">
@@ -248,16 +241,7 @@ const Settings = () => {
           </div>
           <div className="settings-footer">
             <div className="d-grid">
-              <Button
-                as="a"
-                rel="noreferrer"
-                href="https://themes.getbootstrap.com/product/appstack-react-admin-dashboard-template/"
-                target="_blank"
-                variant="primary"
-                size="lg"
-              >
-                Purchase
-              </Button>
+
             </div>
           </div>
         </div>

@@ -117,8 +117,8 @@ class AuthenticationService {
     }
 
     setMovieDescription(values, movieid) {
-        console.log({content:values.inputBio , email:movieid.toString()});
-        return axios.post("/setmoviedescription", {content:values.inputBio , email:movieid.toString()});
+        console.log({content:values.inputBio , email:movieid});
+        return axios.post("/setmoviedescription", {content:values.inputBio , email:""+movieid});
 
 
     }

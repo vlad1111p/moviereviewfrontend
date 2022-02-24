@@ -112,7 +112,7 @@ const Activities = () => (
             </Card.Title>
         </Card.Header>
         <Card.Body>
-                {displayMessage()}
+            {displayMessage()}
 
         </Card.Body>
     </Card>

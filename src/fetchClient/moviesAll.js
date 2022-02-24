@@ -26,7 +26,7 @@ class MoviesAll extends Component{
                     return(
 
                             <Col md="6" lg="4" key={id}>
-                            <Card>
+                            <Card style={{ width: '18rem' }}>
                                 <Card.Img width="10%" height="30%" src={movie.movieProfileImageLink} alt="couldn't find image" />
                                     <Card.Header>
                                     <Card.Title tag="h5" className="mb-0">

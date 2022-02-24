@@ -1,42 +1,31 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import { Container, Row, Col } from "react-bootstrap";
+import { Context, SnakeGame } from "react-game-snake";
 
-import Header from "./Header";
-import Appointments from "./Appointments";
-import BarChart from "./BarChart";
-import Calendar from "./Calendar";
-import Feed from "./Feed";
-import PieChart from "./PieChart";
-import Projects from "./Projects";
-import Statistics from "./Statistics";
+
 
 const Default = () => (
   <React.Fragment>
     <Helmet title="Default Dashboard" />
     <Container fluid className="p-0">
-      <Header />
-      <Statistics />
-      <Row>
-        <Col lg="8" className="d-flex">
-          <BarChart />
-        </Col>
-        <Col lg="4" className="d-flex">
-          <Feed />
-        </Col>
-      </Row>
-      <Row>
-        <Col lg="6" xl="4" className="d-flex">
-          <Calendar />
-        </Col>
-        <Col lg="6" xl="4" className="d-flex">
-          <PieChart />
-        </Col>
-        <Col lg="6" xl="4" className="d-flex">
-          <Appointments />
-        </Col>
-      </Row>
-      <Projects />
+        <h1>Press P to pause or resume the game</h1>
+        <SnakeGame
+            colors={{
+                field: "#bdc3c7",
+                food: "#9b59b6",
+                snake: "#3498db",
+            }}
+            countOfHorizontalFields={20}
+            countOfVerticalFields={20}
+            fieldSize={20}
+            loopTime={200}
+            pauseAllowed={true}
+            restartAllowed={true}
+            onLoose={(context: Context) => alert(`You loosed with ${context.game.points} points.`)}
+            onRestart={(context: Context) => alert("restarted")}
+            onWin={(context: Context) => alert(`You won with ${context.game.points} points.`)}
+        />
     </Container>
   </React.Fragment>
 );

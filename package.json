@@ -75,6 +75,7 @@
     "react-dragula": "1.1.17",
     "react-dropzone": "^11.5.1",
     "react-feather": "2.0.9",
+    "react-game-snake": "^1.0.4",
     "react-helmet-async": "1.1.2",
     "react-i18next": "11.12.0",
     "react-input-mask": "2.0.4",

@@ -2,6 +2,7 @@ import axios from "axios";
 import React, {Component, useCallback, useEffect, useState} from "react";
 import {useDropzone} from 'react-dropzone';
 import {getAllUsers} from "./client";
+import {Card} from "react-bootstrap";
 
 const UserProfiles = () => {
 
@@ -21,17 +22,22 @@ const UserProfiles = () => {
     return UserProfiles.map((userProfile, index) => {
         return (
 
-            <div key={index}>
+            <Card style={{ width: '18rem' }}>
                 {userProfile.userProfileId ?
-                    (<img src={`http://localhost:8080/api/v1/user-profile/${userProfile.userProfileId}/image/download`} alt="The picture has been deleted"/> )
+                    (<Card.Img width="10" height="30"
+                               src={`http://localhost:8080/api/v1/user-profile/${userProfile.userProfileId}/image/download`}
+                               alt="couldn't find image"/>)
                     : null}
-                <br/>
-                <h1>{userProfile.userProfileId}</h1>
-                <p>{userProfile.userProfileId}</p>
+                <Card.Title tag="h5" className="mb-0">
+                    {userProfile.firstName}
+                </Card.Title>
+                <Card.Text>
+                {userProfile.bio}
+                </Card.Text>
                 <MyDropzone {...userProfile}/>
                 <br/>
 
-            </div>
+            </Card>
         )
     })
 };
@@ -69,25 +75,29 @@ function MyDropzone({userProfileId}) {
     )
 }
 
-class UsersAll extends Component{
+class UsersAll extends Component {
 
-    state ={
-        users:[]
+    state = {
+        users: []
     }
-    componentDidMount ()  {
+
+    componentDidMount() {
         this.fetchUsers();
     }
+
     fetchUsers = () => getAllUsers()
-        .then(res=> res.json()
+        .then(res => res.json()
             .then(users => {
-        console.log(users);
-        this.setState({users});
-    }));
-    render(){
-        const {users}=this.state;
+                console.log(users);
+                this.setState({users});
+            }));
+
+    render() {
+        const {users} = this.state;
+
         function alltheusers() {
-            return users.map((user,id)=>{
-                    return(
+            return users.map((user, id) => {
+                    return (
                         <div key={id}>
                             <h2>{user.id}</h2>
                             <h2>{user.firstName}</h2>
@@ -97,11 +107,11 @@ class UsersAll extends Component{
         }
 
         return (
-        <div className="App">
-            <UserProfiles/>
-            {alltheusers()}
-        </div>
-    );
-}}
+            <div className="App">
+                <UserProfiles/>
+            </div>
+        );
+    }
+}
 
 export default UsersAll;

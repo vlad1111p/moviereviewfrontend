@@ -40,7 +40,7 @@ const SaaS = () => {
                 inputBio: " ",
             },
             async onSubmit(values) {
-                await AuthenticationService.setMovieDescription(values);
+                await AuthenticationService.setMovieDescription(values,movie.id);
             },
         });
 

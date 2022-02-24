@@ -1,10 +1,7 @@
 import {
   Bell,
-  BookOpen,
   Calendar,
   CheckSquare,
-  Grid,
-  Heart,
   Layout,
   List,
   PieChart,
@@ -70,15 +67,7 @@ const pagesSection = [
       {
         href: "/auth/sign-up",
         title: "Sign Up",
-      },
-      {
-        href: "/auth/404",
-        title: "404 Page",
-      },
-      {
-        href: "/auth/500",
-        title: "500 Page",
-      },
+      }
     ],
   },
 ];

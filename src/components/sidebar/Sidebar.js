@@ -15,7 +15,7 @@ const Sidebar = ({ items, showFooter = true }) => {
       <div className="sidebar-content">
         <PerfectScrollbar>
           <a className="sidebar-brand" href="/">
-            <Logo /> <span className="align-middle me-3">Movie</span>
+             <span className="align-middle me-3">Movie Review</span>
           </a>
 
           <SidebarNav items={items} />
